@@ -26,6 +26,8 @@ namespace WebApplication9
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDataProtection()
+       .DisableAutomaticKeyGeneration();
             //services.AddRazorPages();
             //services.AddDataProtection().PersistKeysToFileSystem(new DirectoryInfo(@"my-vol"))
             //             .UseCryptographicAlgorithms(new AuthenticatedEncryptorConfiguration()
