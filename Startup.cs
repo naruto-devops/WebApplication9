@@ -27,7 +27,7 @@ namespace WebApplication9
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            services.AddDataProtection().PersistKeysToFileSystem(new DirectoryInfo(@"\var\temp-key\"))
+            services.AddDataProtection().PersistKeysToFileSystem(new DirectoryInfo(@"my-vol"))
                          .UseCryptographicAlgorithms(new AuthenticatedEncryptorConfiguration()
                          {
                              EncryptionAlgorithm = EncryptionAlgorithm.AES_256_CBC,
