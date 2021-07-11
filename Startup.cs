@@ -26,15 +26,15 @@ namespace WebApplication9
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDataProtection()
-       .DisableAutomaticKeyGeneration();
-            //services.AddRazorPages();
-            //services.AddDataProtection().PersistKeysToFileSystem(new DirectoryInfo(@"my-vol"))
-            //             .UseCryptographicAlgorithms(new AuthenticatedEncryptorConfiguration()
-            //             {
-            //                 EncryptionAlgorithm = EncryptionAlgorithm.AES_256_CBC,
-            //                 ValidationAlgorithm = ValidationAlgorithm.HMACSHA256
-            //             });
+            //     services.AddDataProtection()
+            //.DisableAutomaticKeyGeneration();
+            services.AddRazorPages();
+            services.AddDataProtection().PersistKeysToFileSystem(new DirectoryInfo(@"myvol2"))
+                         .UseCryptographicAlgorithms(new AuthenticatedEncryptorConfiguration()
+                         {
+                             EncryptionAlgorithm = EncryptionAlgorithm.AES_256_CBC,
+                             ValidationAlgorithm = ValidationAlgorithm.HMACSHA256
+                         });
         }
        
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
